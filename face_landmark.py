@@ -17,10 +17,10 @@ def file_list_fn(path):
         file_list.append(f)
     return file_list
 
-net_work_path = '/home/code/face-landmark/model/landmark_deploy.prototxt'
-weight_path = '/home/code/face-landmark/model/VanFace.caffemodel'
-images_dir = '/home/code/face-landmark/images/'
-result_dir = '/home/code/face-landmark/results/'
+net_work_path = './model/landmark_deploy.prototxt'
+weight_path = './model/VanFace.caffemodel'
+images_dir = './images/'
+result_dir = './results/'
 
 image_list = file_list_fn(images_dir)
 caffe.set_mode_cpu()
@@ -94,8 +94,11 @@ for image in image_list:
             x = points[2*i] * (x2 - x1) + x1
             y = points[2*i+1] * (y2 - y1) + y1
             cv2.circle(img, (int(x), int(y)), 1, (0, 0, 255), 2)
-
+    cv2.namedWindow("image")
+    cv2.imshow("image",img)
+    cv2.waitKey(0)
     cv2.imwrite(result_dir + image, img)
+
 
 print total_detecting_time
 print total_landmark_time

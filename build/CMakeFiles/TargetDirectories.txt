@@ -1,0 +1,3 @@
+/home/weshare/sichang/face-landmark/build/CMakeFiles/edit_cache.dir
+/home/weshare/sichang/face-landmark/build/CMakeFiles/rebuild_cache.dir
+/home/weshare/sichang/face-landmark/build/CMakeFiles/face_landmark.dir
